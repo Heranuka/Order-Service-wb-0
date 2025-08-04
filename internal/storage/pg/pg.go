@@ -227,7 +227,6 @@ func (p *Postgres) CloseConnection() {
 func (p *Postgres) GetAllOrderIDs(ctx context.Context) ([]domain.Order, error) {
 	var orders []domain.Order
 
-	// Пример с JOIN, необходимо указать правильные поля связи
 	query := `
         SELECT 
             o.OrderUID, o.Entry, o.InternalSignature, o.Locale, o.CustomerID, o.TrackNumber, o.DeliveryService, o.Shardkey, o.SmID,
