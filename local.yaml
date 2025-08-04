@@ -1,0 +1,21 @@
+env: local
+
+kafka:
+  topic: topic
+  consumer_group: app-consumer-local
+  treatUnmarshalErrorAsCritical: false
+  max_retries: 3
+  initial_backoff: 1s
+  brokers:
+    - kafka-local:9092
+
+redis:
+  addrs:
+    - redis-local:6379
+  password: ""
+  db_redis: 0
+
+http:
+  port: "8080"
+  read_timeout: 10s
+  write_timeout: 10s
